@@ -1,0 +1,35 @@
+
+Call:
+glm(formula = claims ~ industry + vehicle_type + territory + 
+    fleet_size + years_in_business + driver_age_band, family = poisson(link = "log"), 
+    data = df, offset = log(exposure))
+
+Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                -1.949409   0.154530 -12.615  < 2e-16 ***
+industryHealthcare         -0.402357   0.101757  -3.954 7.68e-05 ***
+industryLogistics           0.017242   0.079481   0.217  0.82826    
+industryProfessional       -0.503904   0.094551  -5.329 9.85e-08 ***
+industryRetail             -0.258969   0.087189  -2.970  0.00298 ** 
+vehicle_typeCargo_Van      -0.318652   0.099554  -3.201  0.00137 ** 
+vehicle_typeDelivery_Truck -0.208042   0.104055  -1.999  0.04557 *  
+vehicle_typeLight_Truck    -0.400359   0.096787  -4.136 3.53e-05 ***
+territorySuburban           0.297626   0.101653   2.928  0.00341 ** 
+territoryUrban              0.815047   0.092933   8.770  < 2e-16 ***
+fleet_size                  0.006687   0.002041   3.277  0.00105 ** 
+years_in_business          -0.003328   0.002552  -1.304  0.19222    
+driver_age_band31–40       -0.083574   0.091647  -0.912  0.36181    
+driver_age_band41–50       -0.115246   0.092030  -1.252  0.21047    
+driver_age_band51–60       -0.098591   0.091470  -1.078  0.28110    
+driver_age_band61–70       -0.074106   0.091512  -0.810  0.41806    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for poisson family taken to be 1)
+
+    Null deviance: 5157.2  on 9999  degrees of freedom
+Residual deviance: 4956.0  on 9984  degrees of freedom
+AIC: 7197.7
+
+Number of Fisher Scoring iterations: 6
+
